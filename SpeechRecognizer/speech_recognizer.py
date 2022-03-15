@@ -3,7 +3,7 @@ import speech_recognition as sr
 
 def listen_mic():
 
-    frase = None
+    phrase = None
 
     microfone = sr.Recognizer()
 
@@ -13,12 +13,12 @@ def listen_mic():
         audio = microfone.listen(source)
 
     try:
-        frase = microfone.recognize_google(audio, language='pt-BR')
-        print('Você disse: ' + frase)
+        phrase = microfone.recognize_google(audio, language='pt-BR')
+        print('Você disse: ' + phrase)
     except sr.UnknownValueError:
         print('Não entendi')
 
-    return frase
+    return phrase
 
 
 listen_mic()
